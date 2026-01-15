@@ -26,3 +26,7 @@ data/tmdb_movies.csv
 # OS files
 .DS_Store
 Thumbs.db
+
+*.csv
+data/
+
