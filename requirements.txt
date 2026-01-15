@@ -1,0 +1,5 @@
+pandas
+python-dotenv
+pyTelegramBotAPI
+requests
+scikit-learn
