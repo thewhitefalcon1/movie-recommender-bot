@@ -12,6 +12,7 @@ class Recommender:
     """
 
     def __init__(self, dataset_path: str):
+        dataset_path = 'TMDB_movie_dataset_v11.csv'
         self.df = pd.read_csv(dataset_path)
 
         # -------- очистка --------
@@ -27,7 +28,7 @@ class Recommender:
         self._prepare_tfidf()
 
     # =========================================================
-    # Основная рекомендация (FAST)
+    # Основная рекомендация
     # =========================================================
     def recommend(self, profile: dict, top_n: int = 10):
         preferred_genres = profile.get("preferred_genres", [])
@@ -45,7 +46,7 @@ class Recommender:
         ].to_dict("records")
 
     # =========================================================
-    # Cold start (TF-IDF)
+    # Cold start 
     # =========================================================
     def recommend_by_keywords(self, query: str, top_n: int = 10):
         query_vec = self.tfidf.transform([query])
@@ -58,7 +59,7 @@ class Recommender:
         ].to_dict("records")
 
     # =========================================================
-    # Векторы жанров (ОДИН РАЗ)
+    # Векторы жанров 
     # =========================================================
     def _prepare_genre_vectors(self):
         all_genres = sorted(
