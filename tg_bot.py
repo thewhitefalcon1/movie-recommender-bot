@@ -200,4 +200,3 @@ def send_recommendation_text(chat_id, recommendations):
 # =========================================================
 print('bot is working')
 bot.polling()
-
