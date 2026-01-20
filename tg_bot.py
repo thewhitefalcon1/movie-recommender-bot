@@ -11,7 +11,7 @@ load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 bot = TeleBot(TOKEN)
-rec_engine = Recommender("data/tmdb_movies.csv")
+rec_engine = Recommender("TMDB_movie_dataset_v11.csv")
 
 # chat_id -> MovieManager
 user_managers = {}
@@ -187,8 +187,6 @@ def send_recommendation_text(chat_id, recommendations):
     for i, m in enumerate(recommendations, 1):
         text += (
             f"{i}. {m['title']}\n"
-            f"⭐ {m.get('vote_average', '—')} | "
-            f"⏱ {m.get('runtime', '—')} мин\n\n"
         )
 
     bot.send_message(chat_id, text)
