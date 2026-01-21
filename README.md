@@ -45,7 +45,7 @@ Telegram-бот для рекомендаций фильмов на основе
 1. Клонируйте репозиторий и перейдите в папку проекта:
 ```bash
 git clone https://github.com/thewhitefalcon1/movie-recommender-bot/tree/main
-cd папка проекта
+cd movie-recommender-bot
 ```
 
 2. Создайте и активируйте виртуальное окружение (рекомендуется):
